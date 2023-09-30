@@ -1,7 +1,53 @@
-<div class="container d-flex flex-column align-items-center justify-content-center text-center vh-100">
+<div
+  class="container d-flex flex-column align-items-center justify-content-center text-center vh-100"
+>
   <h1 class="tree-text appear-animation mb-0">TreePlanter.io</h1>
-  <div class="button-container mt-2 d-flex flex-column">
-    <button class="rounded-button appear-button">Log In</button>
-    <button class="rounded-button appear-button">Sign Up</button>
+  <div class="min-height">
+    <div
+      *ngIf="!showLoginForm"
+      class="button-container mt-2 d-flex flex-column"
+    >
+      <button
+        class="rounded-button appear-button"
+        (click)="showLoginForm = !showLoginForm"
+      >
+        Log In
+      </button>
+      <button
+        class="rounded-button appear-button"
+        (click)="showLoginForm = !showLoginForm"
+      >
+        Sign Up
+      </button>
+    </div>
+    <div class="login-container" *ngIf="showLoginForm">
+      <div>
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <input
+              class="custom-input"
+              placeholder="Username"
+              type="text"
+              id="name"
+              name="name"
+              [(ngModel)]="loginData.name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              class="custom-input"
+              placeholder="Password"
+              type="password"
+              id="password"
+              name="password"
+              [(ngModel)]="loginData.password"
+              required
+            />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
