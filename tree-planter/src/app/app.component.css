@@ -1,12 +1,9 @@
-h1 {
-  font-size: 10rem;
-  background: linear-gradient(to right, rgb(67, 124, 205), rgb(69, 214, 202));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  pointer-events: none;
-  animation: fade 1s ease-in;
-  opacity: 0;
-  animation-fill-mode: forwards;
+.appear-animation {
+  animation: fade 1s ease-in, reduceSize 1s ease 2s;
+}
+
+.appear-button {
+  animation: appearButtons 1s ease-in-out 3s;
 }
 
 @keyframes fade {
@@ -16,4 +13,56 @@ h1 {
   100% {
     opacity: 1;
   }
+}
+
+@keyframes reduceSize {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes appearButtons {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tree-text {
+  background: linear-gradient(to right, rgb(67, 124, 205), rgb(69, 214, 202));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  font-size: 10rem;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.rounded-button {
+  background-color: #4caf50;
+  color: white;
+  border-radius: 25px;
+  border: none;
+  padding: 30px 100px;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 3rem;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.rounded-button:hover {
+  background-color: #45a049;
 }
