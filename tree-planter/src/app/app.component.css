@@ -43,7 +43,7 @@
   pointer-events: none;
   opacity: 0;
   animation-fill-mode: forwards;
-  font-size: 10rem;
+  font-size: 9rem;
 }
 
 .button-container {
@@ -67,4 +67,30 @@
 
 .rounded-button:hover {
   background-color: #45a049;
+}
+
+@media screen and (max-width: 992px) {
+  .tree-text {
+    font-size: 6rem;
+    margin-bottom: 10px;
+  }
+
+  .rounded-button{
+    font-size: 3rem;
+    padding: 30px 80px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tree-text {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  .rounded-button {
+    font-size: 2rem;
+    padding: 20px 60px;
+    margin-bottom: 10px;
+  }
 }
