@@ -22,7 +22,9 @@ export class AppComponent implements OnInit {
   constructor(private http: DataStorageService) {}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.http.getTotalUserCount().subscribe((data) => {
+      this.totalUsers = data.totalUsers;
+    });
   }
 
   title = 'tree-planter';
@@ -32,6 +34,7 @@ export class AppComponent implements OnInit {
   };
   showButtons = true;
   showLoginForm = false;
+  totalUsers?: number;
 
   toggleLoginForm() {
     this.showButtons = false;
