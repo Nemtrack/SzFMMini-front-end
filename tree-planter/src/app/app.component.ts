@@ -29,22 +29,49 @@ export class AppComponent implements OnInit {
 
   title = 'tree-planter';
   loginData = {
-    name: '',
+    username: '',
     password: '',
   };
   showButtons = true;
   showLoginForm = false;
   totalUsers?: number;
+  isLogin = false;
 
-  toggleLoginForm() {
-    this.showButtons = false;
+  buttonsSwitchWithDelay(bool: boolean) {
+    this.showButtons = bool;
     setTimeout(() => {
-      this.showLoginForm = true;
+      this.showLoginForm = !bool;
     }, 600);
   }
 
+  formSwitchWithDelay(bool: boolean) {
+    this.showLoginForm = bool;
+    setTimeout(() => {
+      this.showButtons = !bool;
+    }, 600);
+  }
+
+  toggleLoginForm() {
+    this.buttonsSwitchWithDelay(false);
+    this.isLogin = true;
+  }
+
+  toggleSignUpForm() {
+    this.buttonsSwitchWithDelay(false);
+    this.isLogin = false;
+  }
+
   onSubmit() {
-    console.log('Form submitted:', this.loginData);
-    this.loginData = { name: '', password: '' };
+    if (!this.isLogin) {
+      console.log('Sign Up Form submitted:', this.loginData);
+      this.loginData = { username: '', password: '' };
+      this.http.registerUser(this.loginData).subscribe((data) => {
+        console.log(data);
+      });
+      this.formSwitchWithDelay(false);
+    } else {
+      console.log('Login Form submitted:', this.loginData);
+      this.loginData = { username: '', password: '' };
+    }
   }
 }

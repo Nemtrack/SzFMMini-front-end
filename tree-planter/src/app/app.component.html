@@ -11,7 +11,7 @@
       <button class="rounded-button appear-button" (click)="toggleLoginForm()">
         Log In
       </button>
-      <button class="rounded-button appear-button" (click)="toggleLoginForm()">
+      <button class="rounded-button appear-button" (click)="toggleSignUpForm()">
         Sign Up
       </button>
     </div>
@@ -25,7 +25,7 @@
               type="text"
               id="name"
               name="name"
-              [(ngModel)]="loginData.name"
+              [(ngModel)]="loginData.username"
               required
             />
           </div>

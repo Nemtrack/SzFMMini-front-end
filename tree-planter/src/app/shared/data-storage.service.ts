@@ -12,4 +12,8 @@ export class DataStorageService {
   getTotalUserCount(): Observable<any> {
     return this.http.get<any>(`${environment.IP_ADDRESS}/api/users/count`);
   }
+
+  registerUser(user: any): Observable<any> {
+    return this.http.post<any>(`${environment.IP_ADDRESS}/register`, user);
+  }
 }
