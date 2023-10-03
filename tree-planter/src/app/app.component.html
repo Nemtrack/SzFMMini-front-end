@@ -6,6 +6,7 @@
     <div
       *ngIf="showButtons"
       class="button-container mt-2 d-flex flex-column"
+      [@fadeIn]
       [@fadeOut]
     >
       <button class="rounded-button appear-button" (click)="toggleLoginForm()">
@@ -15,14 +16,14 @@
         Sign Up
       </button>
     </div>
-    <div class="login-container" *ngIf="showLoginForm" [@fadeIn]>
+    <div class="login-container" *ngIf="showLoginForm" [@fadeIn] [@fadeOut]>
       <div>
-        <form (ngSubmit)="onSubmit()">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
           <div class="form-group">
             <input
               class="custom-input"
               placeholder="Username"
-              type="text"
+              type="name"
               id="name"
               name="name"
               [(ngModel)]="loginData.username"

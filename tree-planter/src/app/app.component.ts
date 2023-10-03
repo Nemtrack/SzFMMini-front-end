@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { DataStorageService } from './shared/data-storage.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -61,17 +62,19 @@ export class AppComponent implements OnInit {
     this.isLogin = false;
   }
 
-  onSubmit() {
-    if (!this.isLogin) {
-      console.log('Sign Up Form submitted:', this.loginData);
-      this.http.registerUser(this.loginData).subscribe((data) => {
-        console.log(data);
-      });
-      this.loginData = { username: '', password: '' };
-      this.formSwitchWithDelay(false);
-    } else {
-      console.log('Login Form submitted:', this.loginData);
-      this.loginData = { username: '', password: '' };
+  onSubmit(form: NgForm) {
+    if (form.valid) {
+      if (!this.isLogin) {
+        console.log('Sign Up Form submitted:', this.loginData);
+        this.http.registerUser(this.loginData).subscribe((data) => {
+          console.log(data);
+        });
+        this.loginData = { username: '', password: '' };
+        this.formSwitchWithDelay(false);
+      } else {
+        console.log('Login Form submitted:', this.loginData);
+        this.loginData = { username: '', password: '' };
+      }
     }
   }
 }
