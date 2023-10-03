@@ -7,12 +7,12 @@ import { trigger, transition, style, animate } from '@angular/animations';
   styleUrls: ['./app.component.css'],
   animations: [
     trigger('fadeOut', [
-      transition(':leave', [animate('1000ms ease-out', style({ opacity: 0 }))]),
+      transition(':leave', [animate('500ms ease-out', style({ opacity: 0 }))]),
     ]),
     trigger('fadeIn', [
       transition(':enter', [
         style({ opacity: 0 }),
-        animate('1000ms ease-in', style({ opacity: 1 })),
+        animate('500ms ease-in', style({ opacity: 1 })),
       ]),
     ]),
   ],
@@ -30,7 +30,7 @@ export class AppComponent {
     this.showButtons = false;
     setTimeout(() => {
       this.showLoginForm = true;
-    }, 1000);
+    }, 600);
   }
 
   onSubmit() {
