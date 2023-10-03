@@ -36,6 +36,7 @@ export class AppComponent implements OnInit {
   showButtons = true;
   showLoginForm = false;
   totalUsers?: number;
+  errorMessage?: string;
   isLogin = false;
 
   buttonsSwitchWithDelay(bool: boolean) {
@@ -66,9 +67,14 @@ export class AppComponent implements OnInit {
     if (form.valid) {
       if (!this.isLogin) {
         console.log('Sign Up Form submitted:', this.loginData);
-        this.http.registerUser(this.loginData).subscribe((data) => {
-          console.log(data);
-        });
+        this.http.registerUser(this.loginData).subscribe(
+          (data) => {
+            console.log(data);
+          },
+          (error) => {
+            this.errorMessage = (error.error.message);
+          }
+        );
         this.loginData = { username: '', password: '' };
         this.formSwitchWithDelay(false);
       } else {

@@ -15,6 +15,7 @@
       <button class="rounded-button appear-button" (click)="toggleSignUpForm()">
         Sign Up
       </button>
+      <h1 [@fadeIn] style="color: crimson">{{ errorMessage }}</h1>
     </div>
     <div class="login-container" *ngIf="showLoginForm" [@fadeIn] [@fadeOut]>
       <div>
