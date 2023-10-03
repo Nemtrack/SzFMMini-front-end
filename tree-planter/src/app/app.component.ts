@@ -34,9 +34,7 @@ export class AppComponent {
   }
 
   onSubmit() {
-    // Handle form submission logic here
     console.log('Form submitted:', this.loginData);
     this.loginData = { name: '', password: '' };
-    // You can add further logic, such as sending the form data to an API
   }
 }
