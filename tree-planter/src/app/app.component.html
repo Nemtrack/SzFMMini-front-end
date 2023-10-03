@@ -4,7 +4,7 @@
   <h1 class="tree-text appear-animation mb-0">TreePlanter.io</h1>
   <div class="min-height">
     <div
-      *ngIf="showButtons"
+      ngIf="showButtons"
       class="button-container mt-2 d-flex flex-column"
       [@fadeOut]
     >
@@ -15,7 +15,7 @@
         Sign Up
       </button>
     </div>
-    <div class="login-container" *ngIf="showLoginForm" [@fadeIn]>
+    <div class="login-container" ngIf="showLoginForm" [@fadeIn]>
       <div>
         <form (ngSubmit)="onSubmit()">
           <div class="form-group">

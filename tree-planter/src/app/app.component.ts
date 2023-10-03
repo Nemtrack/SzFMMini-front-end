@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { DataStorageService } from './shared/data-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,13 @@ import { trigger, transition, style, animate } from '@angular/animations';
     ]),
   ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private http: DataStorageService) {}
+
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+
   title = 'tree-planter';
   loginData = {
     name: '',
