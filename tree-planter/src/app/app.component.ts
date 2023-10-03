@@ -64,10 +64,10 @@ export class AppComponent implements OnInit {
   onSubmit() {
     if (!this.isLogin) {
       console.log('Sign Up Form submitted:', this.loginData);
-      this.loginData = { username: '', password: '' };
       this.http.registerUser(this.loginData).subscribe((data) => {
         console.log(data);
       });
+      this.loginData = { username: '', password: '' };
       this.formSwitchWithDelay(false);
     } else {
       console.log('Login Form submitted:', this.loginData);
