@@ -4,23 +4,24 @@
   <h1 class="tree-text appear-animation mb-0">TreePlanter.io</h1>
   <div class="min-height">
     <div
-      *ngIf="!showLoginForm"
+      *ngIf="showButtons"
       class="button-container mt-2 d-flex flex-column"
+      [@fadeOut]
     >
       <button
         class="rounded-button appear-button"
-        (click)="showLoginForm = !showLoginForm"
+        (click)="toggleLoginForm()"
       >
         Log In
       </button>
       <button
         class="rounded-button appear-button"
-        (click)="showLoginForm = !showLoginForm"
+        (click)="toggleLoginForm()"
       >
         Sign Up
       </button>
     </div>
-    <div class="login-container" *ngIf="showLoginForm">
+    <div class="login-container" *ngIf="showLoginForm" [@fadeIn]>
       <div>
         <form (ngSubmit)="onSubmit()">
           <div class="form-group">
