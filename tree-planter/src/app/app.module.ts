@@ -8,11 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { TreeComponent } from './tree/tree.component';
 import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.component';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 
-const routes: Routes = [{ path: 'trees', component: TreeComponent }];
+const routes: Routes = [
+  { path: '', component: WelcomeScreenComponent, pathMatch: 'full' },
+  { path: 'trees', component: TreeComponent },
+];
 
 @NgModule({
-  declarations: [AppComponent, TreeComponent, WelcomeScreenComponent],
+  declarations: [AppComponent, TreeComponent, WelcomeScreenComponent, LoginComponent],
   imports: [
     BrowserModule,
     FormsModule,
