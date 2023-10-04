@@ -6,6 +6,10 @@
   animation: appearButtons 1s ease-in-out 3s;
 }
 
+.appear-button-post-creation {
+  animation: appearButtons 1s ease-in-out 1s;
+}
+
 .rounded-button {
   background-color: #4caf50;
   color: white;

@@ -1,4 +1,22 @@
 <div class="button-container mt-2 d-flex flex-column">
-  <button class="rounded-button appear-button" routerLink="login">Log In</button>
-  <button class="rounded-button appear-button" routerLink="signup">Sign Up</button>
+  <button
+    [ngClass]="{
+      'appear-button': appCreated !== true,
+      'appear-button-post-creation': appCreated === true
+    }"
+    class="rounded-button"
+    routerLink="login"
+  >
+    Log In
+  </button>
+  <button
+    [ngClass]="{
+      'appear-button': appCreated !== true,
+      'appear-button-post-creation': appCreated === true
+    }"
+    class="rounded-button"
+    routerLink="signup"
+  >
+    Sign Up
+  </button>
 </div>
