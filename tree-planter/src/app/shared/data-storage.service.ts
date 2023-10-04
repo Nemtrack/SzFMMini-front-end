@@ -14,6 +14,10 @@ export class DataStorageService {
   }
 
   registerUser(user: any): Observable<any> {
-    return this.http.post<any>(`${environment.IP_ADDRESS}/register`, user);
+    return this.http.post<any>(`${environment.IP_ADDRESS}/auth/register`, user);
+  }
+
+  loginUser(user: any): Observable<any> {
+    return this.http.post<any>(`${environment.IP_ADDRESS}/auth/login`, user);
   }
 }

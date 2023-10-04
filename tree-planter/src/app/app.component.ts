@@ -72,13 +72,24 @@ export class AppComponent implements OnInit {
             console.log(data);
           },
           (error) => {
-            this.errorMessage = (error.error.message);
+            this.errorMessage = error.error.message;
           }
         );
         this.loginData = { username: '', password: '' };
         this.formSwitchWithDelay(false);
       } else {
         console.log('Login Form submitted:', this.loginData);
+        this.http.loginUser(this.loginData).subscribe(
+          (data) => {
+            console.log(data);
+            localStorage.setItem('token', data.token);
+            console.log(data.token);
+          },
+          (error) => {
+            this.errorMessage = error.error.message;
+            console.log(error.error.message);
+          }
+        );
         this.loginData = { username: '', password: '' };
       }
     }
