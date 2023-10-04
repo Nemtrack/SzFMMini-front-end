@@ -2,9 +2,9 @@
   animation: fade 1s ease-in, reduceSize 1s ease 2s;
 }
 
-.appear-button {
+/* .appear-button {
   animation: appearButtons 1s ease-in-out 3s;
-}
+} */
 
 @keyframes fade {
   0% {
@@ -24,7 +24,7 @@
   }
 }
 
-@keyframes appearButtons {
+/* @keyframes appearButtons {
   0% {
     opacity: 0;
     transform: translateY(20px);
@@ -34,7 +34,7 @@
     transform: translateY(0);
     pointer-events: all;
   }
-}
+} */
 
 .tree-text {
   background: linear-gradient(to right, rgb(67, 124, 205), rgb(69, 214, 202));
@@ -51,9 +51,9 @@
   margin-top: 20px;
 }
 
-.login-container {
+/* .login-container {
   margin-top: 20px;
-}
+} */
 
 .min-height {
   min-height: 490px;
@@ -79,14 +79,14 @@
   border-color: #4caf50;
 }
 
-.custom-input {
+/* .custom-input {
   color: #4caf50;
   border: 2px solid #4caf50;
   border-radius: 25px;
   padding: 30px 35px;
   margin: 20px 0;
   font-size: 3rem;
-}
+} */
 
 .nature-button {
   background-color: #4caf50;
@@ -119,11 +119,11 @@
     margin-bottom: 10px;
   }
 
-  .custom-input {
+  /* .custom-input {
     padding: 10px 15px;
     margin: 20px 0;
     font-size: 3rem;
-  }
+  } */
 }
 
 @media screen and (max-width: 600px) {
@@ -138,9 +138,9 @@
     margin-bottom: 10px;
   }
 
-  .custom-input {
+  /* .custom-input {
     padding: 10px 10px;
     margin: 10px 3;
     font-size: 2rem;
-  }
+  } */
 }

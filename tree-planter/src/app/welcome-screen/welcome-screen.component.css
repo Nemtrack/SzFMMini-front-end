@@ -1,0 +1,55 @@
+.button-container {
+  margin-top: 20px;
+}
+
+.appear-button {
+  animation: appearButtons 1s ease-in-out 3s;
+}
+
+.rounded-button {
+  background-color: #4caf50;
+  color: white;
+  border-radius: 25px;
+  padding: 30px 200px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 3rem;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+}
+
+.rounded-button:hover {
+  color: #4caf50;
+  background-color: white;
+  border-color: #4caf50;
+}
+
+@keyframes appearButtons {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .rounded-button {
+    font-size: 3rem;
+    padding: 30px 80px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .rounded-button {
+    font-size: 2rem;
+    padding: 20px 60px;
+    margin-bottom: 10px;
+  }
+}

@@ -4,49 +4,5 @@
   <h1 class="tree-text appear-animation mb-0">TreePlanter.io</h1>
   <div class="min-height">
     <router-outlet></router-outlet>
-    <div
-      *ngIf="showButtons"
-      class="button-container mt-2 d-flex flex-column"
-      [@fadeIn]
-      [@fadeOut]
-    >
-      <button class="rounded-button appear-button" (click)="toggleLoginForm()">
-        Log In
-      </button>
-      <button class="rounded-button appear-button" (click)="toggleSignUpForm()">
-        Sign Up
-      </button>
-      <h1 [@fadeIn] style="color: crimson">{{ errorMessage }}</h1>
-    </div>
-    <div class="login-container" *ngIf="showLoginForm" [@fadeIn] [@fadeOut]>
-      <div>
-        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-          <div class="form-group">
-            <input
-              class="custom-input"
-              placeholder="Username"
-              type="name"
-              id="name"
-              name="name"
-              [(ngModel)]="loginData.username"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <input
-              class="custom-input"
-              placeholder="Password"
-              type="password"
-              id="password"
-              name="password"
-              [(ngModel)]="loginData.password"
-              required
-            />
-          </div>
-          <button class="nature-button" type="submit">Submit</button>
-          {{ totalUsers }}
-        </form>
-      </div>
-    </div>
   </div>
 </div>

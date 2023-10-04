@@ -1,1 +1,29 @@
-<p>login works!</p>
+<div class="login-container">
+  <div>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <div class="form-group">
+        <input
+          class="custom-input"
+          placeholder="Username"
+          type="name"
+          id="name"
+          name="name"
+          [(ngModel)]="loginData.username"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          class="custom-input"
+          placeholder="Password"
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="loginData.password"
+          required
+        />
+      </div>
+      <button class="nature-button" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
