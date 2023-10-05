@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DataStorageService } from '../shared/data-storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,9 +16,17 @@ export class LoginComponent implements OnInit {
   errorMessage?: string;
   isLogin = false;
 
-  constructor(private http: DataStorageService) {}
+  constructor(private router: Router, private http: DataStorageService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.checkLogin();
+  }
+
+  checkLogin() {
+    if (this.router.url.includes('login')) {
+      this.isLogin = true;
+    }
+  }
 
   onSubmit(form: NgForm) {
     if (form.valid) {
