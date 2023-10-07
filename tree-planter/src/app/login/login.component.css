@@ -31,6 +31,21 @@
   background-color: #45a049;
 }
 
+.appear-animation {
+  animation: fade 1s ease-in;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media screen and (max-width: 992px) {
   .custom-input {
     padding: 10px 15px;
