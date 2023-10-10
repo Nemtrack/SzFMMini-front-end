@@ -1,5 +1,5 @@
 .appear-animation {
-  animation: fade 1s ease-in, reduceSize 1s ease 2s;
+  animation: fade 1s ease-in;
 }
 
 @keyframes fade {
@@ -8,15 +8,6 @@
   }
   100% {
     opacity: 1;
-  }
-}
-
-@keyframes reduceSize {
-  0% {
-    transform: translateY(200px);
-  }
-  100% {
-    transform: translateY(-10px);
   }
 }
 
@@ -39,7 +30,6 @@
   pointer-events: none;
   opacity: 0;
   animation-fill-mode: forwards;
-  transform: translateY(200px);
   font-size: 9rem;
 }
 
