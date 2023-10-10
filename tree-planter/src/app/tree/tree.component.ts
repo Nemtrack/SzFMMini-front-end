@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Tree } from './tree.model';
 
 @Component({
   selector: 'app-tree',
@@ -11,5 +12,7 @@ export class TreeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  trees: Tree[] = [];
 
 }

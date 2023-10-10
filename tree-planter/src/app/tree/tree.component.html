@@ -1,1 +1,7 @@
-<p>tree works!</p>
+<div class="tree-cards-container">
+  <div *ngFor="let tree of trees" class="tree-card">
+    <img [src]="tree.imageUrl" alt="{{ tree.name }}" class="tree-image">
+    <h2 class="tree-name">{{ tree.name }}</h2>
+    <p class="tree-description">{{ tree.description }}</p>
+  </div>
+</div>
