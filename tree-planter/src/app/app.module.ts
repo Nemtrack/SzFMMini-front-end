@@ -13,12 +13,17 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   { path: '', component: WelcomeScreenComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'signup', component: LoginComponent},
+  { path: 'signup', component: LoginComponent },
   { path: 'trees', component: TreeComponent },
 ];
 
 @NgModule({
-  declarations: [AppComponent, TreeComponent, WelcomeScreenComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    TreeComponent,
+    WelcomeScreenComponent,
+    LoginComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,

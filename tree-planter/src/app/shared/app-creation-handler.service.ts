@@ -6,7 +6,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 export class AppCreationService {
   appCreationEmitter: EventEmitter<boolean> = new EventEmitter();
 
-  createApp() {
+  createApp(): void {
     this.appCreationEmitter.next(true);
   }
 }

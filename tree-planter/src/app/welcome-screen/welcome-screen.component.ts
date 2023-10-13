@@ -7,7 +7,7 @@ import { AppCreationService } from '../shared/app-creation-handler.service';
   styleUrls: ['./welcome-screen.component.css'],
 })
 export class WelcomeScreenComponent implements OnInit {
-  appCreated = false;
+  appCreated: boolean = false;
 
   constructor(private creationHandler: AppCreationService) {}
 

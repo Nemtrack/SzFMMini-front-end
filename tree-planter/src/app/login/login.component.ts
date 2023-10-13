@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  loginData = {
+  loginData: { username: string; password: string } = {
     username: '',
     password: '',
   };
   errorMessage?: string;
-  isLogin = false;
+  isLogin: boolean = false;
 
   constructor(private router: Router, private http: DataStorageService) {}
 
@@ -22,13 +22,13 @@ export class LoginComponent implements OnInit {
     this.checkLogin();
   }
 
-  checkLogin() {
+  checkLogin(): void {
     if (this.router.url.includes('login')) {
       this.isLogin = true;
     }
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit(form: NgForm): void {
     if (form.valid) {
       if (!this.isLogin) {
         console.log('Sign Up Form submitted:', this.loginData);

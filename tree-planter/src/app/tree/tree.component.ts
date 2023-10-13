@@ -4,15 +4,12 @@ import { Tree } from './tree.model';
 @Component({
   selector: 'app-tree',
   templateUrl: './tree.component.html',
-  styleUrls: ['./tree.component.css']
+  styleUrls: ['./tree.component.css'],
 })
 export class TreeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   trees: Tree[] = [];
-
 }
