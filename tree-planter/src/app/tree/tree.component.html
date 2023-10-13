@@ -1,3 +1,6 @@
+<div class="user-welcome appear-animation">
+  <h1>Welcome {{ username }}! These are your trees!</h1>
+</div>
 <div class="tree-cards-container">
   <div *ngFor="let tree of trees" class="tree-card">
     <img [src]="tree.imageUrl" alt="{{ tree.name }}" class="tree-image" />
