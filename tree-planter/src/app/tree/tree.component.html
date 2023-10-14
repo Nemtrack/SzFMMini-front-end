@@ -3,8 +3,9 @@
 </div>
 <div class="tree-cards-container">
   <div *ngFor="let tree of trees" class="tree-card">
-    <img [src]="tree.imageUrl" alt="{{ tree.name }}" class="tree-image" />
-    <h2 class="tree-name">{{ tree.name }}</h2>
-    <p class="tree-description">{{ tree.description }}</p>
+    <img [src]="tree.imageUrl" alt="{{ tree.tree_type }}" class="tree-image" />
+    <h2 class="tree-name">{{ tree.tree_type }}</h2>
+    <p class="tree-description">Current state: {{ tree.tree_state }}</p>
+    <p class="tree-description">Last sprinkled: {{ tree.last_sprinkled | date:'medium' }}</p>
   </div>
 </div>

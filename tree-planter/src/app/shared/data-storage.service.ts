@@ -20,4 +20,8 @@ export class DataStorageService {
   loginUser(user: any): Observable<any> {
     return this.http.post<any>(`${environment.IP_ADDRESS}/auth/login`, user);
   }
+
+  getTrees(): Observable<any> {
+    return this.http.get<any>(`${environment.IP_ADDRESS}/api/tree`);
+  }
 }

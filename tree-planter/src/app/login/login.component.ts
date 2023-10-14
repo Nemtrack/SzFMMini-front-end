@@ -45,8 +45,8 @@ export class LoginComponent implements OnInit {
         this.http.loginUser(this.loginData).subscribe({
           next: (data) => {
             console.log(data);
-            localStorage.setItem('token', data.token);
-            console.log(data.token);
+            localStorage.setItem('token', data.user_data.username);
+            console.log(localStorage.getItem('token'));
             this.router.navigate(['/trees']);
           },
           error: (error) => {

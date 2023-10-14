@@ -1,7 +1,9 @@
 export class Tree {
   constructor(
-    public name: string,
-    public description: string,
+    public plant_date: Date,
+    public tree_type: string,
+    public tree_state: string,
+    public last_sprinkled: Date,
     public imageUrl: string
   ) {}
 }
