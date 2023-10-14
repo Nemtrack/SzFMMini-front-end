@@ -9,6 +9,7 @@ import { TreeComponent } from './tree/tree.component';
 import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeScreenComponent, pathMatch: 'full' },
@@ -23,6 +24,7 @@ const routes: Routes = [
     TreeComponent,
     WelcomeScreenComponent,
     LoginComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
